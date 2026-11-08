@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>kitten sweeper</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <h1>kitten sweeper <span class="paw" id="paw"></span></h1>
+  <p class="sub">don't wake the grumpy cats. fr.</p>
+
+  <div class="levels" role="group" aria-label="difficulty">
+    <button data-level="chill" class="on">chill</button>
+    <button data-level="normal">normal</button>
+    <button data-level="chaos">chaos</button>
+  </div>
+
+  <div class="hud">
+    <div class="pill" title="grumpy cats left"><span class="ic" id="catic"></span><span id="left">0</span></div>
+    <button id="face" class="face" aria-label="new game"></button>
+    <div class="pill" title="time"><span class="lbl">time</span> <span id="time">0</span></div>
+  </div>
+
+  <div id="board" class="board" role="grid" aria-label="minesweeper board"></div>
+
+  <div class="tools">
+    <button id="mode" class="mode" aria-pressed="false"><span class="ic" id="fishic"></span>flag mode: <b>off</b></button>
+    <span id="best" class="best"></span>
+  </div>
+  <p id="msg" class="msg" aria-live="polite">tap to sweep. hold or use flag mode to drop a fish on a sus tile.</p>
+  <p class="foot">right-click or long-press = flag · tap a number to chord</p>
+</main>
+<script src="icons.js"></script>
+<script src="game.js"></script>
+<script>document.getElementById("paw").innerHTML=pawSVG();document.getElementById("catic").innerHTML=catSVG("grumpy");document.getElementById("fishic").innerHTML=fishSVG();</script>
+</body>
+</html>
